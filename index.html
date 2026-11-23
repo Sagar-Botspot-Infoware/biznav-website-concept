@@ -237,9 +237,14 @@ h1,h2,h3,h4{font-weight:600;letter-spacing:-.015em}
 .btn.ghost:hover{border-color:#54768E;background:rgba(84,118,142,.06)}
 nav{background:rgba(255,255,255,.93);border-bottom:1px solid var(--line)}
 nav img{height:34px}
-nav .cbtn{background:#141E2D;color:#fff}
-.lang{display:flex;gap:12px;align-items:center;font-size:12.5px;font-weight:600;color:#99A8B3;border-left:1px solid var(--line);padding-left:16px}
-.lang b{color:#141E2D}.lang span{cursor:default}
+nav .links a.cbtn{background:#141E2D;color:#fff}
+nav .links a.cbtn:hover{background:#54768E;color:#fff}
+.lang{display:flex;gap:12px;align-items:center;font-size:12.5px;font-weight:600;border-left:1px solid var(--line);padding-left:16px}
+.lang span{cursor:pointer;color:#99A8B3;transition:.2s}
+.lang span:hover{color:#54768E}
+.lang span.on{color:#141E2D;font-weight:700}
+.langnote{position:fixed;top:78px;left:50%;transform:translateX(-50%) translateY(-8px);background:#141E2D;color:#EAF0F7;font-size:13.5px;font-weight:500;padding:11px 20px;border-radius:9px;box-shadow:0 14px 34px rgba(20,30,45,.28);opacity:0;pointer-events:none;transition:.3s;z-index:120;max-width:92vw;text-align:center}
+.langnote.show{opacity:1;transform:translateX(-50%) translateY(0)}
 @media(max-width:920px){.lang{display:none}}
 .hero{background:linear-gradient(180deg,#FFFFFF,#F6F3EA)}
 .win{background:linear-gradient(180deg,#1B2838,#141E2D);--ink:#EAF0F7;--mut:#99A8B3;--line:rgba(255,255,255,.09);--teal:#7FA3BC;--sky:#7FA3BC;--coral:#E08A84;--amber:#E0B36A;--green:#5BBE8A;--violet:#9D8FC7;color:#EAF0F7;box-shadow:0 32px 70px rgba(20,30,45,.3);border-radius:14px}
@@ -279,7 +284,7 @@ footer{--ink:#EAF0F7;--mut:#99A8B3;--line:rgba(255,255,255,.12);background:#0F17
 .win{max-width:100%}
 @media(max-width:480px){.steps,.stats{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(3,1fr)}}
 </style></head><body><nav><div class="wrap"><a href="index.html"><img src="assets/logo.svg" alt="BizNav"></a>
-<div class="links"><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="erp.html" class="">ERP — Odoo</a><a href="osapp.html" class="">OsApp</a><a href="stories.html" class="">Examples</a><a href="pricing.html" class="">Pricing</a><span class="lang"><b>EN</b><span title="Slovenian version ships with the production build">SL</span><span title="German version ships with the production build">DE</span></span><a class="cbtn" href="contact.html">Contact us</a></div></div></nav>
+<div class="links"><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="erp.html" class="">ERP — Odoo</a><a href="osapp.html" class="">OsApp</a><a href="stories.html" class="">Examples</a><a href="pricing.html" class="">Pricing</a><span class="lang" id="langsw"><span data-l="en" class="on">EN</span><span data-l="sl" title="Slovenian version ships with the production build">SL</span><span data-l="de" title="German version ships with the production build">DE</span></span><a class="cbtn" href="contact.html">Contact us</a></div></div></nav>
 <section class="hero"><div class="wrap">
 <div><div class="chip" data-rv>Slovenian business &amp; digital navigation</div>
 <h1 class="h1" data-rv>Orientation in <span class="gx">digital chaos.</span></h1>
@@ -400,6 +405,17 @@ document.querySelectorAll('[data-type]').forEach(el=>{const ph=JSON.parse(el.dat
 // toast cycles
 document.querySelectorAll('.toastbox').forEach(box=>{const ts=box.querySelectorAll('.toast');let i=0;
  const cyc=()=>{ts.forEach(t=>t.classList.remove('show'));ts[i].classList.add('show');i=(i+1)%ts.length};cyc();setInterval(cyc,3200)});
+// language switch (concept: SL/DE copy ships with the production build)
+const sw=document.getElementById('langsw');
+if(sw){const msgs={sl:'Slovenska različica bo pripravljena v polni izvedbi — koncept je prikazan v angleščini.',de:'Die deutsche Version wird im finalen Aufbau umgesetzt — das Konzept ist auf Englisch.'};
+ const note=document.createElement('div');note.className='langnote';document.body.appendChild(note);let tm;
+ const set=(l,show)=>{sw.querySelectorAll('span').forEach(s=>s.classList.toggle('on',s.dataset.l===l));
+  try{localStorage.setItem('bn_lang',l)}catch(e){}
+  if(show&&msgs[l]){note.textContent=msgs[l];note.classList.add('show');clearTimeout(tm);tm=setTimeout(()=>note.classList.remove('show'),4600)}
+  else{note.classList.remove('show')}};
+ sw.querySelectorAll('span').forEach(s=>s.addEventListener('click',()=>set(s.dataset.l,true)));
+ let saved=null;try{saved=localStorage.getItem('bn_lang')}catch(e){}
+ if(saved&&saved!=='en')set(saved,false)}
 // osapp schedule check-ins
 document.querySelectorAll('.sched').forEach(s=>{const rows=s.querySelectorAll('.row');let i=0;
  setInterval(()=>{if(i<rows.length){rows[i++].classList.add('ok')}else{rows.forEach(r=>r.classList.remove('ok'));i=0}},1400)});
