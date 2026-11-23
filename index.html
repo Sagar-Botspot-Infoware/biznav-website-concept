@@ -2,7 +2,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Orientation in digital chaos — BizNav</title><meta name="description" content="">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0A101B;--bg2:#0D1420;--navy:#141E2D;--card:#111a28;--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.09);
 --teal:#00C2BE;--sky:#7FB2D6;--coral:#FF6F67;--amber:#F5B04C;--green:#3FC97C;--violet:#A585D1;--slate:#6F93AF;
@@ -220,79 +221,91 @@ details p{padding:0 22px 19px;font-size:14.5px}
 .tc .role{font-size:12px;letter-spacing:.09em;text-transform:uppercase;font-weight:700;margin:4px 0 12px}
 [data-rv]{opacity:0}
 @media(prefers-reduced-motion:reduce){[data-rv]{opacity:1}}
-/* ================= v5 LIGHT THEME (overrides) ================= */
-:root{--bg:#FFFFFF;--bg2:#F4F7FA;--card:#FFFFFF;--ink:#15202E;--mut:#5A6B7E;--line:#E4EAF1;
---teal:#00A39F;--sky:#3D7EA6;--coral:#E85D55;--amber:#D98E2B;--green:#2FA866;--violet:#8A66C2;
---g1:linear-gradient(92deg,#00A39F,#3D7EA6);--g2:linear-gradient(135deg,#00A39F,#2E6E8E)}
+/* ================= v7 BIZNAV BRAND (biznav.si: Work Sans · ink #141E2D · slate #54768E · cream #F1EDE2) ================= */
+:root{--bg:#FFFFFF;--bg2:#F1EDE2;--card:#FFFFFF;--ink:#141E2D;--mut:#575757;--line:#E8E4DA;
+--teal:#54768E;--sky:#54768E;--coral:#54768E;--amber:#54768E;--green:#54768E;--violet:#54768E;--slate:#54768E;
+--g1:linear-gradient(92deg,#54768E,#54768E);--g2:linear-gradient(135deg,#141E2D,#141E2D)}
 body{background:var(--bg);color:var(--ink)}
-.chip{color:var(--sky);border-color:rgba(61,126,166,.35);background:rgba(61,126,166,.07)}
-.btn.primary{box-shadow:0 10px 26px rgba(0,163,159,.25)}
-.btn.primary:hover{box-shadow:0 16px 36px rgba(0,163,159,.35)}
-.btn.ghost{border-color:#D5DEE7;background:#fff;color:var(--ink)}
-.btn.ghost:hover{border-color:var(--sky);background:rgba(61,126,166,.06)}
-nav{background:rgba(255,255,255,.88);border-bottom:1px solid var(--line)}
-.hero{background:radial-gradient(900px 500px at 75% 8%,rgba(61,126,166,.12),transparent 60%),radial-gradient(700px 500px at 10% 90%,rgba(0,163,159,.08),transparent 60%),var(--bg)}
-.win{--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.09);--teal:#00C2BE;--sky:#7FB2D6;--coral:#FF6F67;--amber:#F5B04C;--green:#3FC97C;--violet:#A585D1;color:#EAF0F7;box-shadow:0 36px 80px rgba(21,32,46,.3)}
-.marq{background:var(--bg2)}
+h1,h2,h3,h4{font-weight:600;letter-spacing:-.015em}
+.gx,.gx2{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#54768E}
+.chip,.chip.coral,.chip.amber,.chip.violet,.chip.green{color:#54768E;border-color:rgba(84,118,142,.32);background:rgba(84,118,142,.07)}
+.chip::before,.chip.coral::before,.chip.amber::before,.chip.violet::before,.chip.green::before{background:#54768E;box-shadow:none}
+.btn{font-weight:600}
+.btn.primary{background:#141E2D;color:#fff;box-shadow:0 10px 24px rgba(20,30,45,.16)}
+.btn.primary:hover{background:#54768E;box-shadow:0 14px 30px rgba(84,118,142,.3)}
+.btn.ghost{border-color:#DAD5C9;background:#fff;color:var(--ink)}
+.btn.ghost:hover{border-color:#54768E;background:rgba(84,118,142,.06)}
+nav{background:rgba(255,255,255,.93);border-bottom:1px solid var(--line)}
+nav img{height:34px}
+nav .cbtn{background:#141E2D;color:#fff}
+.lang{display:flex;gap:12px;align-items:center;font-size:12.5px;font-weight:600;color:#99A8B3;border-left:1px solid var(--line);padding-left:16px}
+.lang b{color:#141E2D}.lang span{cursor:default}
+@media(max-width:920px){.lang{display:none}}
+.hero{background:linear-gradient(180deg,#FFFFFF,#F6F3EA)}
+.win{background:linear-gradient(180deg,#1B2838,#141E2D);--ink:#EAF0F7;--mut:#99A8B3;--line:rgba(255,255,255,.09);--teal:#7FA3BC;--sky:#7FA3BC;--coral:#E08A84;--amber:#E0B36A;--green:#5BBE8A;--violet:#9D8FC7;color:#EAF0F7;box-shadow:0 32px 70px rgba(20,30,45,.3);border-radius:14px}
+.marq{background:#FAF8F2}
 .marq img{filter:grayscale(1);opacity:.6}
-.vbreak .ov,.cta .ov{--ink:#EAF0F7;--mut:#C7D2DE;--sky:#9CC3E0;--teal:#00C2BE;color:#EAF0F7}
-.card{background:#fff;border-color:var(--line)}
-.card:hover{box-shadow:0 22px 48px rgba(21,32,46,.12);border-color:#C7D6E2}
-.stat,.step,.tlc,.mod,details{background:#fff;border-color:var(--line)}
-.story{background:#fff;border-color:var(--line)}
-.story:hover{border-color:#C7D6E2;box-shadow:0 22px 48px rgba(21,32,46,.12)}
+.card,.stat,.step,.tlc,.mod,details,.story{background:#fff;border-color:var(--line);border-radius:9px}
+.card:hover,.story:hover{box-shadow:0 20px 44px rgba(20,30,45,.1);border-color:#C9C3B4}
+.ico.teal,.ico.coral,.ico.amber,.ico.green,.ico.violet,.ico.sky{background:rgba(84,118,142,.1);color:#54768E;border-radius:9px}
+.step:nth-child(1)::before,.step:nth-child(2)::before,.step:nth-child(3)::before,.step:nth-child(4)::before{background:rgba(84,118,142,.1);color:#54768E}
+.tile:hover{background:rgba(127,163,188,.12);border-color:rgba(127,163,188,.4)}
 .story .cover{height:172px;background-size:cover;background-position:center}
-.story .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,21,34,.05) 30%,rgba(13,21,34,.78))}
-.light{background:var(--bg2)}
-input,select,textarea{background:#fff;border-color:#D5DEE7;color:var(--ink)}
-footer{--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.1);background:#0B1420;color:#9AA8BA}
-.film-frame{box-shadow:0 36px 90px rgba(21,32,46,.35)}
-.photo{width:100%;border-radius:20px;box-shadow:0 28px 64px rgba(21,32,46,.2);display:block;object-fit:cover}
+.story .cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,30,45,.05) 30%,rgba(20,30,45,.78))}
+.story .tag{color:#54768E;background:rgba(84,118,142,.1)}
+.light{background:#F1EDE2}
+.light .card,.light .step{border-color:#E2DCCB}
+input,select,textarea{background:#fff;border-color:#DAD5C9;color:var(--ink)}
+/* cream statement band (replaces decorative video breaks) */
+.band{background:#F1EDE2;padding:88px 0;text-align:center}
+.band .k{font-size:12px;letter-spacing:.26em;font-weight:700;color:#54768E;text-transform:uppercase;margin-bottom:18px}
+.band h2{font-size:clamp(24px,3.2vw,40px);max-width:860px;margin:0 auto;font-weight:600;line-height:1.3}
+.band h2 span{color:#54768E}
+.band p{max-width:620px;margin:20px auto 0;font-size:16px}
+/* calm navy CTA with BizNav logo watermark */
+.cta{background:#141E2D;position:relative;overflow:hidden}
+.cta .ov{position:relative;background:none;padding:104px 0;text-align:center;--ink:#FFFFFF;--mut:#C7D0DA;color:#EAF0F7}
+.cta h2{color:#fff}
+.cta .wm{position:absolute;right:-30px;bottom:-60px;height:300px;opacity:.07;pointer-events:none}
+.cta .btn.primary{background:#fff;color:#141E2D}
+.cta .btn.primary:hover{background:#F1EDE2;color:#141E2D}
+footer{--ink:#EAF0F7;--mut:#99A8B3;--line:rgba(255,255,255,.12);background:#141E2D;color:#99A8B3}
+.film-frame{box-shadow:0 32px 80px rgba(20,30,45,.3)}
+.photo{width:100%;border-radius:12px;box-shadow:0 24px 56px rgba(20,30,45,.16);display:block;object-fit:cover}
+.cap{font-size:13px;color:#8B8679;margin-top:12px}
 /* mobile overflow guards: nowrap content inside grids must not widen the page */
 .hero .wrap>*,.split>*,[data-pherogrid]>*,.grid>*{min-width:0}
 .ask{min-width:0}.ask .q{flex:1;min-width:0}
 .win{max-width:100%}
 @media(max-width:480px){.steps,.stats{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(3,1fr)}}
 </style></head><body><nav><div class="wrap"><a href="index.html"><img src="assets/logo.svg" alt="BizNav"></a>
-<div class="links"><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="erp.html" class="">ERP — Odoo</a><a href="osapp.html" class="">OsApp</a><a href="einvoicing.html" class="">E-Invoicing</a><a href="stories.html" class="">Stories</a><a href="pricing.html" class="">Pricing</a><a class="cbtn" href="contact.html">Contact us</a></div></div></nav>
+<div class="links"><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="erp.html" class="">ERP — Odoo</a><a href="osapp.html" class="">OsApp</a><a href="stories.html" class="">Examples</a><a href="pricing.html" class="">Pricing</a><span class="lang"><b>EN</b><span title="Slovenian version ships with the production build">SL</span><span title="German version ships with the production build">DE</span></span><a class="cbtn" href="contact.html">Contact us</a></div></div></nav>
 <section class="hero"><div class="wrap">
 <div><div class="chip" data-rv>Slovenian business &amp; digital navigation</div>
 <h1 class="h1" data-rv>Orientation in <span class="gx">digital chaos.</span></h1>
-<p class="lead" data-rv>Too many tools, too little direction. We analyse how you actually work — then build one connected system on Odoo, with AI and automation where it measurably pays off.</p>
+<p class="lead" data-rv>Too many tools, too little direction. We deliver three things: a business analysis of how you actually work, a phased Odoo implementation, and practical automation — with AI only where it measurably pays off.</p>
 <div class="btns" data-rv><a class="btn primary" href="contact.html">Book a free consultation</a><a class="btn ghost" href="#film">▶&nbsp; Watch the film</a></div>
-<div class="trust" data-rv><div><b>Odoo platform</b><small>30+ connected apps</small></div><div><b>60–90 days</b><small>analysis to working system</small></div><div><b>OsApp</b><small>our own SaaS product</small></div></div></div>
-<div data-rv><div class="win">
-<div class="bar"><i></i><i></i><i></i><span style="margin-left:6px;font-weight:700;color:var(--ink)">BizNav · Odoo</span>
-<span class="live">LIVE</span><span class="clk" style="margin-left:14px"><span data-clock>--:--</span> · Ljubljana</span></div>
-<div class="ask"><span class="spark">✦</span><span style="color:var(--mut);font-weight:600;white-space:nowrap">Ask BizNav</span>
-<span class="q" data-type='["Where is order #1042?","Prepare the ministry report…","Show overdue invoices","Plan next week\u2019s schedule"]'></span><span class="cur"></span></div>
-<div class="tiles"><div class="tile"><div class="ic" style="color:var(--teal)">◎</div><small>Sales</small></div><div class="tile"><div class="ic" style="color:var(--coral)">☺</div><small>CRM</small></div><div class="tile"><div class="ic" style="color:var(--sky)">€</div><small>Accounting</small></div><div class="tile"><div class="ic" style="color:var(--amber)">⬢</div><small>Inventory</small></div><div class="tile"><div class="ic" style="color:var(--green)">⇄</div><small>Purchase</small></div><div class="tile"><div class="ic" style="color:var(--violet)">⚙</div><small>Manufacturing</small></div><div class="tile"><div class="ic" style="color:var(--teal)">▦</div><small>Project</small></div><div class="tile"><div class="ic" style="color:var(--coral)">✣</div><small>HR</small></div><div class="tile"><div class="ic" style="color:var(--sky)">⌂</div><small>Website</small></div><div class="tile"><div class="ic" style="color:var(--green)">▣</div><small>POS</small></div><div class="tile"><div class="ic" style="color:var(--amber)">✆</div><small>Helpdesk</small></div><div class="tile"><div class="ic" style="color:var(--violet)">✉</div><small>Marketing</small></div></div>
-<div class="toastbox">
-<div class="toast"><div class="dot" style="background:rgba(63,201,124,.15);color:var(--green)">✓</div><div><b>Invoice 2026-118 paid</b><small>Accounting · just now</small></div></div>
-<div class="toast"><div class="dot" style="background:rgba(245,176,76,.15);color:var(--amber)">⬢</div><div><b>Stock reserved — delivery tomorrow</b><small>Inventory · order #1042</small></div></div>
-<div class="toast"><div class="dot" style="background:rgba(127,178,214,.15);color:var(--sky)">⇪</div><div><b>Ministry report exported</b><small>OsApp · 2 minutes ago</small></div></div>
-</div></div></div>
+<div class="trust" data-rv><div><b>Odoo platform</b><small>30+ connected apps</small></div><div><b>Business analysis</b><small>two weeks, fixed scope</small></div><div><b>OsApp</b><small>our own SaaS product</small></div></div></div>
+<div data-rv><img class="photo" src="assets/odoo_real.jpg" alt="Odoo — the real apps view"><div class="cap">Odoo — real product view</div></div>
 </div></section>
-<div class="marq"><div class="track"><img src="assets/cl_hrast.png" alt="client"><img src="assets/cl_kdr.png" alt="client"><img src="assets/cl_masist.png" alt="client"><img src="assets/cl_onn.png" alt="client"><img src="assets/cl_saba.png" alt="client"><img src="assets/cl_zoo.jpg" alt="client"><img src="assets/cl_hrast.png" alt="client"><img src="assets/cl_kdr.png" alt="client"><img src="assets/cl_masist.png" alt="client"><img src="assets/cl_onn.png" alt="client"><img src="assets/cl_saba.png" alt="client"><img src="assets/cl_zoo.jpg" alt="client"></div></div>
+<div class="marq"><div class="track"><img src="assets/cl_hrast.png" alt="client"><img src="assets/cl_masist.png" alt="client"><img src="assets/cl_onn.png" alt="client"><img src="assets/cl_saba.png" alt="client"><img src="assets/cl_zoo.jpg" alt="client"><img src="assets/cl_hrast.png" alt="client"><img src="assets/cl_masist.png" alt="client"><img src="assets/cl_onn.png" alt="client"><img src="assets/cl_saba.png" alt="client"><img src="assets/cl_zoo.jpg" alt="client"></div></div>
 <section style="padding:80px 0"><div class="wrap"><div class="stats">
-<div class="stat teal" data-rv><b><span data-count="90">0</span></b><small>days max from analysis to a live system</small></div>
-<div class="stat amber" data-rv><b>up to <span data-count="30">0</span>%</b><small>of working time saved with a connected system</small></div>
+<div class="stat teal" data-rv><b>2,000+</b><small>employees organised through OsApp at Slovenian institutes</small></div>
 <div class="stat sky" data-rv><b><span data-count="30">0</span>+</b><small>business apps on one Odoo platform</small></div>
-<div class="stat coral" data-rv><b>1</b><small>system instead of ten disconnected tools</small></div>
+<div class="stat amber" data-rv><b>2 weeks</b><small>fixed-scope business analysis before anything is built</small></div>
+<div class="stat coral" data-rv><b>1</b><small>connected database for the whole company</small></div>
 </div></div></section>
-<section class="vbreak"><video autoplay muted loop playsinline src="assets/loop_chaos.mp4"></video>
-<div class="ov"><div class="wrap"><div class="k" data-rv>The problem</div><h2 data-rv>Too many tools. Too little direction.</h2></div></div></section>
+<section class="band"><div class="wrap"><div class="k" data-rv>The problem, solved</div><h2 data-rv>Know where an order stands, what needs your attention and where to find the information you need — <span>without checking three spreadsheets or asking five colleagues.</span></h2><p data-rv>That is what better-connected business should feel like.</p></div></section>
 <section><div class="wrap">
 <div class="chip violet" data-rv>What we do</div>
 <h2 class="h2" data-rv>Four services. One approach:<br><span class="gx">business logic first.</span></h2>
 <div style="margin-top:46px">
-<a class="chap" href="erp.html" data-rv><div class="num"><b>01</b> / 04</div><div><h3>ERP — Odoo implementation</h3><p>One connected system for sales, inventory, accounting, manufacturing and HR — configured to your processes and live in 60–90 days.</p></div><div class="go">→</div></a>
-<a class="chap" href="services.html" data-rv><div class="num"><b>02</b> / 04</div><div><h3>CRM &amp; sales pipeline</h3><p>Customers, quotes and follow-ups in one view. No lost opportunities, no spreadsheets scattered across folders.</p></div><div class="go">→</div></a>
-<a class="chap" href="services.html" data-rv><div class="num"><b>03</b> / 04</div><div><h3>AI where it pays</h3><p>Document drafting, customer replies, data analysis — we bring AI in only where the saving is measurable.</p></div><div class="go">→</div></a>
+<a class="chap" href="erp.html" data-rv><div class="num"><b>01</b> / 04</div><div><h3>ERP — Odoo implementation</h3><p>Bring sales, purchasing, inventory and finance together in Odoo. We start with the functions your business needs most, then expand as your requirements grow.</p></div><div class="go">→</div></a>
+<a class="chap" href="services.html" data-rv><div class="num"><b>02</b> / 04</div><div><h3>CRM &amp; sales pipeline</h3><p>Customer details, opportunities, quotations and follow-ups in one place — a clear view of each opportunity and the next action to take.</p></div><div class="go">→</div></a>
+<a class="chap" href="services.html" data-rv><div class="num"><b>03</b> / 04</div><div><h3>AI where it pays</h3><p>Drafting documents, preparing customer replies, exploring business data — your team reviews the output and stays in control.</p></div><div class="go">→</div></a>
 <a class="chap" href="services.html" data-rv><div class="num"><b>04</b> / 04</div><div><h3>Automation</h3><p>Data transfers, reports, notifications — repeated tasks run on their own. Don't work faster. Work smarter.</p></div><div class="go">→</div></a>
 </div></div></section>
-<section class="vbreak"><video autoplay muted loop playsinline src="assets/loop_chevron.mp4"></video>
-<div class="ov"><div class="wrap"><div class="k" data-rv>The approach</div><h2 data-rv>Business logic leads. Technology follows.</h2></div></div></section>
+<section class="band"><div class="wrap"><div class="k" data-rv>The approach</div><h2 data-rv>Business logic leads. <span>Technology follows.</span></h2></div></section>
 <section><div class="wrap split">
 <div><div class="chip coral" data-rv>Our product</div>
 <h2 class="h2" data-rv>OsApp — personal assistance, <span class="gx2">organised.</span></h2>
@@ -316,11 +329,12 @@ footer{--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.1);background:#0B142
 <div class="steps">
 <div class="step" data-rv><h3>Business analysis</h3><p>We map processes, tools and bottlenecks. No assumptions.</p><small>WEEKS 1–2</small></div>
 <div class="step" data-rv><h3>Plan</h3><p>We decide what to digitalise, what to automate — and what to leave alone.</p><small>WEEK 3</small></div>
-<div class="step" data-rv><h3>Implementation</h3><p>We configure the system, migrate data and train your team.</p><small>WEEKS 4–11</small></div>
-<div class="step" data-rv><h3>Support</h3><p>The system keeps living — we remain your navigator.</p><small>ONGOING</small></div>
-</div></div></section>
+<div class="step" data-rv><h3>Implementation &amp; testing</h3><p>We configure the system, migrate data and test with your key users — every phase has an acceptance gate.</p><small>WEEKS 4–11</small></div>
+<div class="step" data-rv><h3>Go-live &amp; support</h3><p>Launch happens when the acceptance checks pass — then we remain your navigator, with agreed support.</p><small>ONGOING</small></div>
+</div>
+<p data-rv style="text-align:center;margin-top:26px;font-size:13px">Illustrative schedule for a typical first phase — your dates and scope are fixed in the analysis.</p></div></section>
 <section style="padding-bottom:0"><div class="wrap split">
-<div data-rv><img class="photo" src="assets/people_meeting.jpg" alt="First consultation — BizNav meeting a client team"></div>
+<div data-rv><img class="photo" src="assets/people_meeting.jpg" alt="The BizNav team with a client"><div class="cap">The BizNav team with a client — first consultation</div></div>
 <div><div class="chip" data-rv>Who you work with</div>
 <h2 class="h2" data-rv>People first. <span class="gx">Then systems.</span></h2>
 <p data-rv style="margin-top:18px">You don't talk to a ticket queue. The consultant who runs your analysis sits with your team through configuration, training and go-live — and stays your navigator after launch.</p>
@@ -328,24 +342,16 @@ footer{--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.1);background:#0B142
 </div></section>
 <section><div class="wrap">
 <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px">
-<div><div class="chip green" data-rv>Proof</div><h2 class="h2" data-rv>Success stories.</h2></div>
-<a class="btn ghost" href="stories.html" data-rv>All stories →</a></div>
+<div><div class="chip green" data-rv>In practice</div><h2 class="h2" data-rv>Example engagements.</h2></div>
+<a class="btn ghost" href="stories.html" data-rv>See all →</a></div>
 <div class="grid g3">
-<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_tablet.jpg)"><h4>Care institute runs 120 assistants on OsApp</h4></div>
-<div class="body"><span class="tag">Example engagement</span><p>Scheduling, ministry reporting and payroll exports — from spreadsheets to one system.</p>
-<div class="kpi"><div><b>3 days → 2 h</b><small>monthly reporting</small></div><div><b>0</b><small>missed shifts</small></div></div></div></a>
-<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_meeting.jpg)"><h4>SME live on Odoo in 75 days</h4></div>
-<div class="body"><span class="tag">Example engagement</span><p>Sales, inventory and accounting replaced four tools — one database, one truth.</p>
-<div class="kpi"><div><b>75 days</b><small>to go-live</small></div><div><b>4 → 1</b><small>systems</small></div></div></div></a>
-<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_consulting.jpg)"><h4>Automation sprint wins back 14 h / month</h4></div>
-<div class="body"><span class="tag">Example engagement</span><p>One painful manual process, automated end-to-end in three weeks — fixed scope, fixed price.</p>
-<div class="kpi"><div><b>14 h</b><small>saved monthly</small></div><div><b>3 weeks</b><small>delivery</small></div></div></div></a>
+<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_care.jpg)"><h4>Personal-assistance institutes run on OsApp</h4></div>
+<div class="body"><span class="tag">OsApp — in production</span><p>Scheduling, ministry reporting and payroll exports in one system. Slovenian institutes organise more than 2,000 employees through OsApp.</p></div></a>
+<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_workshop.jpg)"><h4>An SME onto Odoo, in phases</h4></div>
+<div class="body"><span class="tag">Example engagement</span><p>Sales, inventory and accounting out of disconnected tools into one database — scoped in a two-week analysis, delivered phase by phase.</p></div></a>
+<a class="story" href="stories.html" data-rv><div class="cover" style="background-image:url(assets/people_team.jpg)"><h4>An automation sprint</h4></div>
+<div class="body"><span class="tag">Example engagement</span><p>One painful manual process automated end-to-end — fixed scope and price, with the saving measured before and after.</p></div></a>
 </div></div></section>
-<section style="padding:0"><div class="wrap"><div data-rv style="border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(120deg,rgba(245,176,76,.14),rgba(255,111,103,.1));border:1px solid rgba(245,176,76,.3);padding:44px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
-<div><div class="chip amber" style="margin-bottom:14px">New law — verified Nov 2026</div>
-<h3 style="font-size:26px;margin-bottom:8px">B2B e-invoicing becomes mandatory in Slovenia on 1 January 2028.</h3>
-<p style="max-width:560px">e-SLOG, EN 16931 or Peppol — your invoicing has to change. Companies that prepare in 2027 will switch without drama.</p></div>
-<a class="btn primary" href="einvoicing.html">Get ready early →</a></div></div></section>
 <section id="film"><div class="wrap">
 <div style="text-align:center"><div class="chip violet" data-rv>The film</div>
 <h2 class="h2" data-rv>36 seconds of direction.</h2></div>
@@ -355,19 +361,20 @@ footer{--ink:#EAF0F7;--mut:#9AA8BA;--line:rgba(255,255,255,.1);background:#0B142
 <div style="text-align:center"><div class="chip" data-rv>What matters to us</div>
 <h2 class="h2" data-rv>Four things we never skip.</h2></div>
 <div class="grid g4">
-<div class="card" data-rv><div class="ico teal">☺</div><h3>People</h3><p>A system is only good once the team enjoys using it.</p></div>
-<div class="card" data-rv><div class="ico coral">⇄</div><h3>Processes</h3><p>First we understand how you work. Then we digitalise.</p></div>
-<div class="card" data-rv><div class="ico amber">◻</div><h3>Simplicity</h3><p>Fewer clicks, fewer tools, less noise.</p></div>
-<div class="card" data-rv><div class="ico green">↝</div><h3>Adaptability</h3><p>Solutions shaped to your business — not the other way round.</p></div>
+<div class="card" data-rv><div class="ico teal">☺</div><h3>People</h3><p>Key users sit in every workshop — the system is shaped with the people who will run it.</p></div>
+<div class="card" data-rv><div class="ico coral">⇄</div><h3>Processes</h3><p>We map your processes before configuring anything — the analysis is the blueprint.</p></div>
+<div class="card" data-rv><div class="ico amber">◻</div><h3>Simplicity</h3><p>Standard-first design: standard Odoo where it fits, custom only where it earns its place.</p></div>
+<div class="card" data-rv><div class="ico green">↝</div><h3>Adaptability</h3><p>Change lands in controlled, tested steps — never a big bang your team can't absorb.</p></div>
 </div></div></section>
-<section class="cta"><video autoplay muted loop playsinline src="assets/loop_close.mp4"></video>
-<div class="ov"><div class="wrap"><h2 data-rv>Ready to find your direction?</h2><p data-rv>Write to us — we reply within one business day and suggest a short intro call.</p><div data-rv><a class="btn primary" href="contact.html">Book a free consultation</a></div></div></div></section>
+<section class="cta"><img class="wm" src="assets/logo-white.svg" alt="" aria-hidden="true">
+<div class="ov"><div class="wrap"><h2 data-rv>Ready to find your direction?</h2><p data-rv style="max-width:540px;margin:16px auto 34px">A free 30-minute intro call: we hear how you work today, flag the quick wins, and suggest the right next step for your business.</p><div data-rv><a class="btn primary" href="contact.html">Book a free consultation</a></div></div></div></section>
 <footer><div class="wrap"><div class="cols">
 <div><img src="assets/logo-white.svg" alt="BizNav"><p style="font-size:14px;max-width:280px">Business &amp; digital navigation. We help organisations find direction in digital chaos — business logic leads, technology follows.</p></div>
-<div><h6>Services</h6><a href="erp.html">ERP — Odoo</a><a href="osapp.html">OsApp</a><a href="einvoicing.html">E-Invoicing 2028</a><a href="services.html">AI &amp; Automation</a></div>
-<div><h6>Company</h6><a href="about.html">About</a><a href="stories.html">Success stories</a><a href="blog.html">Blog &amp; news</a><a href="careers.html">Careers</a></div>
+<div><h6>Services</h6><a href="erp.html">ERP — Odoo</a><a href="osapp.html">OsApp</a><a href="services.html">AI &amp; Automation</a></div>
+<div><h6>Company</h6><a href="about.html">About</a><a href="stories.html">Example engagements</a><a href="careers.html">Careers</a></div>
 <div><h6>Explore</h6><a href="solutions.html">Solutions</a><a href="industries.html">Industries</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div>
-</div><div class="base"><span>© 2026 BizNav d.o.o. — Website concept by Botspot Infoware</span><span>biznav.si</span></div></div></footer>
+</div><div class="base"><span>© 2026 BizNav. Vse pravice pridržane. — Website concept by Botspot Infoware</span>
+<span><a href="https://biznav.si/izjava-o-zasebnosti/" style="display:inline;padding:0 10px 0 0">Izjava o zasebnosti</a><a href="https://biznav.si/pogoji-poslovanja/" style="display:inline;padding:0 10px">Pogoji poslovanja</a><a href="https://biznav.si/piskotki/" style="display:inline;padding:0 0 0 10px">Piškotki</a></span></div></div></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
